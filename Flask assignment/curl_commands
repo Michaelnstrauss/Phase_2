@@ -1,0 +1,7 @@
+curl -i -H "Content-Type: application/json" -X PUT -d '{"amount": 555.00}' http://localhost:5000/api/aaaaa/deposit
+
+curl -i http://localhost/api/get_price/tsla
+
+curl http://localhost:5000/api/00000/positions
+
+curl http://localhost:5000/api/price/TSLA

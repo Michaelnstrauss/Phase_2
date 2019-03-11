@@ -1,0 +1,179 @@
+/* This applies CSS styling to the entire file  */
+
+/*
+* {
+    box-sizing: border-box;
+}
+*/
+
+/* classes without . at the start apply to all HTML elements with the same tag */
+
+/*
+body {
+    font-family: Arial;
+    padding: 10px;
+    background: #f1f1f1;
+}
+*/
+
+/*
+label, input {
+    display: table-cell;
+    margin-bottom: 10px;
+}
+*/
+
+/*
+label {
+    padding-right: 10px;
+}
+*/
+
+
+/*
+.header {
+    background-color: #f1f1f1;
+    padding: 50px;
+    text-align: center;
+  }
+*/ 
+
+/*
+.topnav {
+    overflow: hidden;
+    background-color: #333;
+    display: flex;
+    flex-direction: row;
+}
+*/
+  
+/* Style the topnav links */
+
+/*
+.topnav a {
+    justify-content: flex-start;
+    color: #f2f2f2;
+    text-align: center;
+    padding: 14px 16px;
+    text-decoration: none;
+}
+*/
+
+/* Change color on hover */
+/*
+.topnav a:hover {
+    background-color: #4CAF50;
+    color: black;
+}
+*/
+/* Clear floats after the columns */
+/*
+.row {
+    display: flex;
+    flex-wrap: wrap;
+}
+*/
+
+/* Create two unequal columns that floats next to each other */
+/* Left column */
+/*
+.leftcolumn {   
+    flex: 70%;
+}
+*/
+  
+/* Right column */
+/*
+.rightcolumn {
+    flex: 30%;
+    width: 30%;
+    background-color: #f1f1f1;
+    padding-left: 20px;
+}
+*/
+  
+  /* Create three equal columns that floats next to each other */
+/*
+.column {
+    flex: 33.33%;
+    padding: 15px;
+}
+*/
+
+/*
+.fullcolumn {
+    flex: 100;
+}
+*/
+
+/* Fake image */
+/*
+.fakeimg {
+    background-color: #aaa;
+    width: 100%;
+    padding: 20px;
+}
+*/
+  
+  /* Add a card effect for articles */
+/*
+.card {
+    background-color: white;
+    padding: 20px;
+    margin-top: 20px;
+}
+*/
+
+
+/* Specify a psuedo class for a form element */
+/*
+form.form-example {
+    display: table;
+}
+*/
+
+/* Specify a psuedo class for a div element */
+/*
+div.form-example {
+    display: table-row;
+}
+*/
+
+/* Footer */
+/*
+.footer {
+    padding: 20px;
+    text-align: center;
+    background: #ddd;
+    margin-top: 20px;
+}
+*/
+  
+  /* Responsive layout - makes the three columns stack on top of each other instead of next to each other */
+/*
+@media screen and (max-width:600px) {
+    .column {
+      width: 100%;
+    }
+}
+*/
+
+/* Responsive layout - when the screen is less than 800px wide, make the two columns stack on top of each other instead of next to each other */
+/*
+@media screen and (max-width: 800px) {
+    .leftcolumn, .rightcolumn {   
+      width: 100%;
+      padding: 0;
+    }
+}
+*/
+/* Responsive layout - when the screen is less than 400px wide, make the navigation links stack on top of each other instead of next to each other */
+/*
+@media screen and (max-width: 400px) {
+    .topnav a {
+      float: none;
+      width: 100%;
+    }
+}
+*/
+
