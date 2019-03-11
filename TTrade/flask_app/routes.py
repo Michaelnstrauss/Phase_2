@@ -95,25 +95,20 @@ def buy(api_key, ticker, amount):
         return jsonify({'error': 'bad request'}), 400
     return jsonify({'username': account.username, "balance": account.balance})
 
-@app.route('/api/<api_key>/sell/<ticker>/<amount>', methods=['GET'])
+@app.route('/api/<api_key>/sell/<ticker>/<amount>', methods=['POST'])
 def sell(api_key, ticker, amount):
     account = Account.authenticate_api(api_key)
-    trade = account.trades_for_json(ticker)
-    price = util.get_price(ticker)[1]
-    position = account.get_position_for_json(ticker) 
-    sale = int(amount) * int(price)
+    position = account.get_position_for(ticker)
     if not account:
-        return jsonify({"error": "authentication error"}), 401
-    if not price:
-        return jsonify({"error": "bad ticker data"}), 400
-    if not position:
-        return jsonify({"error": "bad position data"}), 400
+        return jsonify({'error': 'authentication error'}), 401
+    if not ticker:
+        return jsonify({'error': "bad ticker data"})
     if not request.json:
-        return jsonify({"error": "bad request"}), 400
+        return jsonify({'error': 'bad request'})
     try:
         if request.json['amount'] and request.json['ticker']:
-            if trade.volume > position:
-                account.buy(ticker, int(amount), int(price), purchase)
+            if position.shares > int(amount):
+                account.sell(ticker, amount)
     except (ValueError, KeyError):
-        return jsonify({'error': 'bad request'}), 400
-    return jsonify({'username': account.username, "balance": account.balance})
+        return jsonify({"error": "bad request"}), 400
+    return jsonify({"username": account.username, "balance": account.balance})
